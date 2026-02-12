@@ -341,7 +341,7 @@ body {
   .navbar { padding: 0 20px; }
   .section-title::after { width: 80px; }
   .matrix-effect {
-    font-size: clamp(1.2rem, 5vw, 1.8rem); 
+    font-size: clamp(1.2rem, 5vw, 1.2rem); 
     white-space: nowrap; 
     display: block;
     width: 100%;
