@@ -34,7 +34,7 @@ const MatrixText = () => {
   );
 };
 
-// --- COMPONENTE DE FORMULARIO INTEGRADO CON TU API ---
+// --- COMPONENTE DE FORMULARIO ---
 const ContactForm = () => {
   const [isSending, setIsSending] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -45,8 +45,6 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Validación de spam local
     const storageKey = `msg_count_${formData.email}`;
     const currentCount = parseInt(localStorage.getItem(storageKey) || "0");
 
@@ -56,9 +54,7 @@ const ContactForm = () => {
     }
 
     setIsSending(true);
-
     try {
-      // LLAMADA A TU API EN VERCEL (/api/contact.js)
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -68,7 +64,7 @@ const ContactForm = () => {
       if (response.ok) {
         localStorage.setItem(storageKey, (currentCount + 1).toString());
         alert(`¡Mensaje enviado con éxito! (Mensajes: ${currentCount + 1}/5)`);
-        setFormData({ name: '', email: '', message: '' }); // Limpia el formulario
+        setFormData({ name: '', email: '', message: '' });
       } else {
         alert("Hubo un error al enviar el mensaje al servidor.");
       }
@@ -88,38 +84,17 @@ const ContactForm = () => {
       viewport={{ once: true }}
     >
       <div className="input-group">
-        <input 
-          type="text" 
-          name="name" 
-          value={formData.name} 
-          onChange={handleChange} 
-          required 
-        />
+        <input type="text" name="name" value={formData.name} onChange={handleChange} required />
         <label className={formData.name ? "active" : ""}>Tu Nombre</label>
       </div>
-
       <div className="input-group">
-        <input 
-          type="email" 
-          name="email" 
-          value={formData.email} 
-          onChange={handleChange} 
-          required 
-        />
+        <input type="email" name="email" value={formData.email} onChange={handleChange} required />
         <label className={formData.email ? "active" : ""}>Correo Electrónico</label>
       </div>
-
       <div className="input-group">
-        <textarea 
-          name="message" 
-          value={formData.message} 
-          onChange={handleChange} 
-          required 
-          rows="5"
-        ></textarea>
+        <textarea name="message" value={formData.message} onChange={handleChange} required rows="5"></textarea>
         <label className={formData.message ? "active" : ""}>Mensaje</label>
       </div>
-
       <motion.button 
         type="submit" 
         className="submit-btn"
@@ -168,12 +143,14 @@ function App() {
             <li><a href="#inicio" onClick={toggleMenu}>Inicio</a></li>
             <li><a href="#about" onClick={toggleMenu}>Sobre Mí</a></li>
             <li><a href="#proyectos" onClick={toggleMenu}>Proyectos</a></li>
+            <li><a href="#certificaciones" onClick={toggleMenu}>Certificaciones</a></li>
             <li><a href="#contacto" onClick={toggleMenu}>Contacto</a></li>
           </ul>
         </div>
       </nav>
 
       <main className="main-content">
+        {/* --- HERO --- */}
         <section id="inicio" className="hero-section">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <span className="greeting">Hola, mi nombre es</span>
@@ -187,6 +164,7 @@ function App() {
           </motion.div>
         </section>
 
+        {/* --- SOBRE MÍ --- */}
         <section id="about" className="section">
           <h2 className="section-title"><span>01.</span> Sobre Mí</h2>
           <div className="about-container">
@@ -201,38 +179,63 @@ function App() {
                 <li>Big Data Analytics</li>
               </ul>
             </div>
+            <div className="about-image">
+              <div className="image-wrapper">
+                <div className="image-overlay"></div>
+                <img src="profile.jpg" alt="Joaquín Leiva" />
+              </div>
+            </div>
           </div>
         </section>
 
+        {/* --- PROYECTOS --- */}
         <section id="proyectos" className="section">
           <h2 className="section-title"><span>02.</span> Proyectos</h2>
           <Proyectos />
         </section>
 
+        {/* --- CERTIFICACIONES --- */}
         <section id="certificaciones" className="section">
-          <h2 className="section-title"><span>04.</span> Certificaciones</h2>
+          <h2 className="section-title"><span>03.</span> Certificaciones</h2>
           <div className="cert-grid">
             <div className="cert-card">
-              <div className="cert-header"><FaDatabase className="cert-lib-icon" /><a href="/diplomas/big-data.pdf" target="_blank" className="cert-link"><FaExternalLinkAlt /></a></div>
+              <div className="cert-header">
+                <FaDatabase className="cert-lib-icon" />
+                <a href="/diplomas/big-data.pdf" target="_blank" className="cert-link"><FaExternalLinkAlt /></a>
+              </div>
               <h3 className="cert-title">Big Data Professional</h3>
+              <p className="cert-org">CertiProf | Oct 2025</p>
             </div>
             <div className="cert-card">
-              <div className="cert-header"><FaChartLine className="cert-lib-icon" /><a href="/diplomas/data-storytelling.pdf" target="_blank" className="cert-link"><FaExternalLinkAlt /></a></div>
+              <div className="cert-header">
+                <FaChartLine className="cert-lib-icon" />
+                <a href="/diplomas/data-storytelling.pdf" target="_blank" className="cert-link"><FaExternalLinkAlt /></a>
+              </div>
               <h3 className="cert-title">Data Storytelling</h3>
+              <p className="cert-org">CertiProf | Oct 2025</p>
             </div>
             <div className="cert-card">
-              <div className="cert-header"><FaRobot className="cert-lib-icon" /><a href="/diplomas/ia-expert.pdf" target="_blank" className="cert-link"><FaExternalLinkAlt /></a></div>
+              <div className="cert-header">
+                <FaRobot className="cert-lib-icon" />
+                <a href="/diplomas/ia-expert.pdf" target="_blank" className="cert-link"><FaExternalLinkAlt /></a>
+              </div>
               <h3 className="cert-title">AI Expert</h3>
+              <p className="cert-org">CertiProf | Oct 2025</p>
             </div>
             <div className="cert-card">
-              <div className="cert-header"><FaBrain className="cert-lib-icon" /><a href="/diplomas/big-school.pdf" target="_blank" className="cert-link"><FaExternalLinkAlt /></a></div>
+              <div className="cert-header">
+                <FaBrain className="cert-lib-icon" />
+                <a href="/diplomas/big-school.pdf" target="_blank" className="cert-link"><FaExternalLinkAlt /></a>
+              </div>
               <h3 className="cert-title">Iniciación IA</h3>
+              <p className="cert-org">BIG school | Oct 2025</p>
             </div>
           </div>
         </section>
 
+        {/* --- CONTACTO --- */}
         <section id="contacto" className="section contact-section">
-          <h2 className="section-title"><span>03.</span> Contacto</h2>
+          <h2 className="section-title"><span>04.</span> Contacto</h2>
           <div className="contact-container">
             <h3>¿Hablamos?</h3>
             <p className="hero-description" style={{margin: '0 auto 30px'}}>Mi bandeja de entrada siempre está abierta.</p>
