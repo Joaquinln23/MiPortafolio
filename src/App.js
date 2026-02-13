@@ -194,44 +194,77 @@ function App() {
           <Proyectos />
         </section>
 
-        {/* --- CERTIFICACIONES --- */}
-        <section id="certificaciones" className="section">
-          <h2 className="section-title"><span>03.</span> Certificaciones</h2>
-          <div className="cert-grid">
-            <div className="cert-card">
-              <div className="cert-header">
-                <FaDatabase className="cert-lib-icon" />
-                <a href="/diplomas/big-data.pdf" target="_blank" className="cert-link"><FaExternalLinkAlt /></a>
-              </div>
-              <h3 className="cert-title">Big Data Professional</h3>
-              <p className="cert-org">CertiProf | Oct 2025</p>
-            </div>
-            <div className="cert-card">
-              <div className="cert-header">
-                <FaChartLine className="cert-lib-icon" />
-                <a href="/diplomas/data-storytelling.pdf" target="_blank" className="cert-link"><FaExternalLinkAlt /></a>
-              </div>
-              <h3 className="cert-title">Data Storytelling</h3>
-              <p className="cert-org">CertiProf | Oct 2025</p>
-            </div>
-            <div className="cert-card">
-              <div className="cert-header">
-                <FaRobot className="cert-lib-icon" />
-                <a href="/diplomas/ia-expert.pdf" target="_blank" className="cert-link"><FaExternalLinkAlt /></a>
-              </div>
-              <h3 className="cert-title">AI Expert</h3>
-              <p className="cert-org">CertiProf | Oct 2025</p>
-            </div>
-            <div className="cert-card">
-              <div className="cert-header">
-                <FaBrain className="cert-lib-icon" />
-                <a href="/diplomas/big-school.pdf" target="_blank" className="cert-link"><FaExternalLinkAlt /></a>
-              </div>
-              <h3 className="cert-title">Iniciación IA</h3>
-              <p className="cert-org">BIG school | Oct 2025</p>
-            </div>
-          </div>
-        </section>
+          {/* --- SECCIÓN CERTIFICACIONES --- */}
+<section id="certificaciones" className="section">
+  <h2 className="section-title"><span>04.</span> Certificaciones</h2>
+  <div className="cert-grid">
+    
+    {/* 1. Big Data */}
+    <div className="cert-card">
+      <div className="cert-header">
+        <FaDatabase className="cert-lib-icon" />
+        <a href="/diplomas/big-data.pdf" target="_blank" rel="noopener noreferrer" className="cert-link">
+          <FaExternalLinkAlt />
+        </a>
+      </div>
+      <h3 className="cert-title">Big Data Professional Certificate - BDPC</h3>
+      <p className="cert-org">CertiProf | Oct 2025</p>
+      <ul className="cert-skills">
+        <li>Arquitecturas</li>
+        <li>Procesamiento</li>
+      </ul>
+    </div>
+
+    {/* 2. Data Storytelling */}
+    <div className="cert-card">
+      <div className="cert-header">
+        <FaChartLine className="cert-lib-icon" />
+        <a href="/diplomas/data-storytelling.pdf" target="_blank" rel="noopener noreferrer" className="cert-link">
+          <FaExternalLinkAlt />
+        </a>
+      </div>
+      <h3 className="cert-title">Data Storytelling Professional Certificate</h3>
+      <p className="cert-org">CertiProf | Oct 2025</p>
+      <ul className="cert-skills">
+        <li>Visualización</li>
+        <li>Insights</li>
+      </ul>
+    </div>
+
+    {/* 3. IA Experto */}
+    <div className="cert-card">
+      <div className="cert-header">
+        <FaRobot className="cert-lib-icon" />
+        <a href="/diplomas/ia-expert.pdf" target="_blank" rel="noopener noreferrer" className="cert-link">
+          <FaExternalLinkAlt />
+        </a>
+      </div>
+      <h3 className="cert-title">Artificial Intelligence Expert - CAIEC®</h3>
+      <p className="cert-org">CertiProf | Oct 2025</p>
+      <ul className="cert-skills">
+        <li>Machine Learning</li>
+        <li>Deep Learning</li>
+      </ul>
+    </div>
+
+    {/* 4. Iniciación IA - BIG School */}
+    <div className="cert-card">
+      <div className="cert-header">
+        <FaBrain className="cert-lib-icon" />
+        <a href="/diplomas/big-school.pdf" target="_blank" rel="noopener noreferrer" className="cert-link">
+          <FaExternalLinkAlt />
+        </a>
+      </div>
+      <h3 className="cert-title">Iniciación al Desarrollo con IA</h3>
+      <p className="cert-org">BIG school | Oct 2025</p>
+      <ul className="cert-skills">
+        <li>Prompt Engineering</li>
+        <li>Brais Moure & R. Fons</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
 
         {/* --- CONTACTO --- */}
         <section id="contacto" className="section contact-section">
