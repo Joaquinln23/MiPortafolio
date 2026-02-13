@@ -287,7 +287,9 @@ function App() {
           <h2 className="section-title"><span>04.</span> Contacto</h2>
           <div className="contact-container">
             <h3>¿Hablamos?</h3>
-            <p className="hero-description" style={{margin: '0 auto 30px'}}>Mi bandeja de entrada siempre está abierta.</p>
+             <p className="hero-description" style={{margin: '0 auto 30px'}}>
+              Mi bandeja de entrada siempre está abierta. Ya sea que tengas una pregunta o simplemente quieras saludar, ¡haré todo lo posible por responderte!
+            </p>
             <ContactForm />
           </div>
         </section>
