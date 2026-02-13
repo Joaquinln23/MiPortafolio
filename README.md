@@ -1,6 +1,7 @@
 # 🚀 Portafolio Profesional - Joaquín Leiva
 
-Bienvenido a mi portafolio personal. Este proyecto es una Single Page Application (SPA) moderna, diseñada con una estética inspirada en terminales de comandos y el efecto "Matrix", enfocada en mostrar mis proyectos como Ingeniero en Informática y mis certificaciones en IA y Big Data.
+Bienvenido a mi portafolio personal. Este proyecto es una Single Page Application (SPA) moderna, diseñada con una estética inspirada en terminales de comandos y el efecto "Matrix", 
+enfocada en mostrar mis proyectos como Ingeniero en Informática y mis certificaciones en IA y Big Data.
 
 🌐 **Demo en vivo:** [joaquincode.vercel.app](https://joaquincode.vercel.app/)
 
@@ -29,11 +30,12 @@ Bienvenido a mi portafolio personal. Este proyecto es una Single Page Applicatio
 
 ---
 
-## 🚀 Instalación y Configuración Local
+## 📧 Contacto
 
-Si deseas clonar este proyecto y ejecutarlo localmente:
+¿Tienes una propuesta o quieres conectar?
 
-1. **Clonar el repositorio:**
-   ```bash
-   git clone [https://github.com/Joaquinln23/MiPortafolio.git](https://github.com/Joaquinln23/MiPortafolio.git)
-   cd MiPortafolio
+* Linkedin: https://www.linkedin.com/in/joaquinleiva23/
+* Email:    joaquinln.23@gmail.com
+* WEB:      https://joaquincode.vercel.app/
+
+Diseñado y construido con ❤️ por Joaquín Leiva.
