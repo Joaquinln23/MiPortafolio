@@ -164,29 +164,45 @@ function App() {
           </motion.div>
         </section>
 
-        {/* --- SOBRE MÍ --- */}
+         {/* --- SOBRE MÍ --- */}
         <section id="about" className="section">
-          <h2 className="section-title"><span>01.</span> Sobre Mí</h2>
-          <div className="about-container">
-            <div className="about-text">
-              <p>¡Hola! Mi nombre es <strong>Joaquín Leiva</strong>. Soy un <strong>Ingeniero en Informática</strong> graduado de <strong>Duoc UC</strong>.</p>
-              <p>Recientemente, he potenciado mi perfil técnico con certificaciones como <strong>AI Expert</strong> y <strong>Big Data Professional</strong>.</p>
-              <ul className="skill-list">
-                <li>C# / .NET Core</li>
-                <li>SQL Server (Stored Procedures)</li>
-                <li>JavaScript (ES6+) / React</li>
-                <li>Artificial Intelligence</li>
-                <li>Big Data Analytics</li>
-              </ul>
-            </div>
-            <div className="about-image">
-              <div className="image-wrapper">
-                <div className="image-overlay"></div>
-                <img src="profile.jpg" alt="Joaquín Leiva" />
-              </div>
-            </div>
-          </div>
-        </section>
+  <h2 className="section-title"><span>01.</span> Sobre Mí</h2>
+  <div className="about-container">
+    <div className="about-text">
+      <p>
+        ¡Hola! Mi nombre es <strong>Joaquín Leiva</strong>. Soy un <strong>Ingeniero en Informática </strong> 
+         graduado de <strong>Duoc UC</strong>, con un enfoque integral en el ciclo completo de desarrollo de software.
+      </p>
+      <p>
+        Mi experiencia abarca desde el diseño de bases de datos y arquitecturas por capas,
+        hasta la implementación de interfaces interactivas y escalables.
+        Me especializo en transformar problemas complejos en soluciones digitales eficientes y modernas.
+      </p>
+      <p>
+        Recientemente, he potenciado mi perfil técnico con certificaciones como <strong>AI Expert</strong> y  
+        <strong> Big Data Professional</strong>, lo que me permite integrar análisis avanzado de datos y modelos
+        inteligentes en cada proyecto que desarrollo.
+      </p>
+      <p>Aquí tienes las tecnologías con las que trabajo principalmente:</p>
+      
+      <ul className="skill-list">
+        <li>C# / .NET Core</li>
+        <li>ASP.NET (Arquitectura por capas)</li>
+        <li>SQL Server (Stored Procedures)</li>
+        <li>JavaScript (ES6+) / React</li>
+        <li>Artificial Intelligence (Prompt Engineering)</li>
+        <li>Big Data Analytics</li>
+      </ul>
+    </div>
+    
+    <div className="about-image">
+      <div className="image-wrapper">
+        <div className="image-overlay"></div>
+        <img src="profile.jpg" alt="Joaquín Leiva" />
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* --- PROYECTOS --- */}
         <section id="proyectos" className="section">
