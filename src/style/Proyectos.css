@@ -1,0 +1,106 @@
+/* --- 5. PROYECTOS --- */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: 50px;
+  justify-items: center; /* Centrar items */
+}
+
+@media (min-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center; /* Centrar items */
+  }
+}
+
+.project-card {
+  background: var(--card-bg);
+  /* Eliminamos el padding lateral para que la imagen toque los bordes */
+  padding: 0; 
+  border-radius: 4px;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden; /* Esto asegura que la imagen respete el borde redondeado de la card */
+}
+
+/* Agregamos padding al contenido de texto para que no quede pegado al borde */
+.card-inner {
+  padding: 2.25rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-image-wrapper {
+  margin-bottom: 15px;
+  /* Eliminamos el overflow: hidden de aquí porque lo movemos a project-card */
+  width: 100%;
+}
+
+.project-image-wrapper img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: var(--transition);
+  display: block; /* Elimina espacio en blanco debajo de la imagen */
+}
+
+.project-image-wrapper img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-7px);
+  background: var(--card-hover);
+}
+
+.project-image-wrapper {
+  margin-bottom: 15px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.project-image-wrapper img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.project-card:hover .project-image-wrapper img {
+  transform: scale(1.05);
+}
+
+.project-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-primary) !important;
+}
+
+.project-card:hover .project-title {
+  color: var(--accent-color) !important;
+}
+
+.project-description {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.project-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: auto;
+  list-style: none;
+  font-family: 'Fira Code', monospace;
+  font-size: 12px;
+  color: var(--text-secondary);
+}

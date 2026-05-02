@@ -1,0 +1,14 @@
+.matrix-effect {
+  font-family: 'Fira Code', monospace;
+  cursor: default;
+  transition: color 0.5s;
+  white-space: nowrap;      
+  display: block;          
+  overflow: visible;         
+  width: fit-content;
+}
+
+.matrix-effect:hover {
+  color: var(--accent-color);
+  text-shadow: 0 0 8px var(--accent-color);
+}

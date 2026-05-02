@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { motion } from 'framer-motion';
-import { FaRegFolder, FaExternalLinkAlt, FaStar } from 'react-icons/fa';
+import { FaStar } from 'react-icons/fa';
+import '../style/Proyectos.css';
 
 const PRIVATE_PROJECTS = [
   {
     id: 'fogon',
     name: 'El Fogón de Casa',
+    image: '/proyectos/ElFogonDeCasa.png',
     description:
       'Sitio web para restaurante con diseño elegante, menú interactivo por categorías, sección de reservas y timeline de historia. Desarrollado como demo para cliente del rubro gastronómico.',
     html_url: null,
@@ -17,11 +18,48 @@ const PRIVATE_PROJECTS = [
   {
     id: 'archivo-expedientes',
     name: 'Archivo de Expedientes',
+    image: '/proyectos/ArchivoDeExpedientes.png',
     description:
       'Plataforma web para juego de misterio en vivo. Incluye casos con PIN de acceso, reproductores de audio/video como evidencias, registro de jugadores vía email, notificaciones con Resend API y panel de veredicto final.',
     html_url: null,
     homepage: 'https://archivo-expedientes.vercel.app/',
     language: 'TypeScript',
+    stargazers_count: 0,
+  },
+  {
+    id: 'agendapro',
+    name: 'AgendaPro',
+    image: '/proyectos/AgendaPro.png',
+    description: 'Sistema de reservas con panel admin, flujo multi-paso, integración WhatsApp (CallMeBot API) y gestión de sesiones JWT.',
+    homepage: 'https://joaquincode.vercel.app/',
+    language: 'React / Node.js',
+    stargazers_count: 0,
+  },
+  {
+    id: 'transgaspi',
+    name: 'Transgaspi',
+    image: '/proyectos/TransGaspi.png',
+    description: 'Landing page para empresa de transporte y maquinaria pesada. Catálogo de flota, conversión vía WhatsApp y despliegue en producción.',
+    homepage: 'https://transgaspi.vercel.app/',
+    language: 'React / Vite',
+    stargazers_count: 0,
+  },
+  {
+    id: 'caterina-artist',
+    name: 'Caterina Artist',
+    image: '/proyectos/CaterinaArtist.png',
+    description: 'Portafolio para artista visual con galería interactiva y diseño responsivo.',
+    homepage: 'https://caterinaartist.netlify.app/',
+    language: 'React',
+    stargazers_count: 0,
+  },
+  {
+    id: 'mi-portafolio',
+    name: 'Mi Portafolio',
+    image: '/proyectos/MiPortafolio.png',
+    description: 'Portafolio personal desarrollado con React, Framer Motion y CSS Modules.',
+    homepage: 'https://joaquincode.vercel.app/',
+    language: 'React',
     stargazers_count: 0,
   },
 ];
@@ -30,19 +68,7 @@ function Proyectos() {
   const [repos, setRepos] = useState([]);
 
   useEffect(() => {
-    axios
-      .get('https://api.github.com/users/Joaquinln23/repos?sort=updated&per_page=6')
-      .then((response) => {
-        const filtered = response.data.filter(
-          (repo) => !['fogon', 'archivo-expedientes'].includes(repo.name)
-        );
-        const combined = [...PRIVATE_PROJECTS, ...filtered].slice(0, 6);
-        setRepos(combined);
-      })
-      .catch((error) => {
-        console.error('Error fetching repos:', error);
-        setRepos(PRIVATE_PROJECTS);
-      });
+    setRepos(PRIVATE_PROJECTS);
   }, []);
 
   return (
@@ -59,22 +85,11 @@ function Proyectos() {
           >
             <div className="card-inner">
               <header>
-                <div className="project-top">
-                  <div className="folder-icon">
-                    <FaRegFolder size={40} />
+                {repo.image && (
+                  <div className="project-image-wrapper">
+                    <img src={repo.image} alt={repo.name} />
                   </div>
-                  <div className="project-links">
-                    {(repo.homepage || repo.html_url) && (
-                      <a
-                        href={repo.homepage || repo.html_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <FaExternalLinkAlt size={20} />
-                      </a>
-                    )}
-                  </div>
-                </div>
+                )}
                 <h3 className="project-title">
                   <a
                     href={repo.homepage || repo.html_url || '#'}
@@ -87,18 +102,13 @@ function Proyectos() {
                   </a>
                 </h3>
                 <p className="project-description">
-                  {repo.description || 'Desarrollando soluciones innovadoras para este repositorio.'}
+                  {repo.description || 'Desarrollando soluciones innovadoras.'}
                 </p>
               </header>
 
               <footer>
                 <ul className="project-tech-list">
                   {repo.language && <li>{repo.language}</li>}
-                  {repo.stargazers_count > 0 && (
-                    <li className="stars">
-                      <FaStar /> {repo.stargazers_count}
-                    </li>
-                  )}
                 </ul>
               </footer>
             </div>

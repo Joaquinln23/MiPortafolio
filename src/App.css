@@ -86,17 +86,25 @@ body {
 
 /* --- 3. ESTRUCTURA GLOBAL --- */
 .main-content {
-  padding: 0 12%;
-  max-width: 1300px;
+  padding: 0 3%;
+  max-width: 1600px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.section { padding: 100px 0; }
+.section { 
+  padding: 100px 0;
+  width: 100%;
+  max-width: 1200px;
+}
 
 .section-title {
   font-size: clamp(24px, 5vw, 30px);
   margin-bottom: 40px;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   color: var(--text-primary);
 }
@@ -172,80 +180,6 @@ body {
   transform: translateY(-3px);
 }
 
-.matrix-effect {
-  font-family: 'Fira Code', monospace; /* Para que se vea técnico */
-  cursor: default;
-  transition: color 0.5s;
-  white-space: nowrap;      
-  display: block;          
-  overflow: visible;         
-  width: fit-content;
-}
-
-.matrix-effect:hover {
-  color: var(--accent-color); /* El verde Matrix que ya configuramos */
-  text-shadow: 0 0 8px var(--accent-color);
-}
-
-/* --- 5. PROYECTOS --- */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 20px;
-  margin-top: 50px;
-}
-
-.project-card {
-  background: var(--card-bg);
-  padding: 2.25rem 1.75rem;
-  border-radius: 4px;
-  transition: var(--transition);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.project-card:hover {
-  transform: translateY(-7px);
-  background: var(--card-hover);
-}
-
-.project-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-  color: var(--accent-color);
-}
-
-.project-title {
-  font-size: 1.35rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: var(--text-primary) !important;
-}
-
-.project-card:hover .project-title {
-  color: var(--accent-color) !important;
-}
-
-.project-description {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  margin-bottom: 20px;
-}
-
-.project-tech-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-top: auto;
-  list-style: none;
-  font-family: 'Fira Code', monospace;
-  font-size: 12px;
-  color: var(--text-secondary);
-}
-
 /* --- 6. CONTACTO (EL BOTÓN "DI HOLA") --- */
 .contact-section {
   text-align: center;
@@ -256,66 +190,6 @@ body {
 .contact-section h3 {
   margin-bottom: 20px;
 }
-
-
-/* Formulario Estilizado */
-.contact-form {
-  margin-top: 60px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.input-group { position: relative; }
-
-.input-group input, 
-.input-group textarea {
-  width: 100%;
-  padding: 12px;
-  background: transparent;
-  border: 1px solid var(--text-secondary);
-  border-radius: 4px;
-  color: var(--text-primary);
-  font-family: inherit;
-  outline: none;
-}
-
-.input-group label {
-  position: absolute;
-  left: 12px;
-  top: 12px;
-  color: var(--text-secondary);
-  transition: 0.2s ease all;
-  pointer-events: none;
-}
-
-.input-group input:focus ~ label,
-.input-group input:valid ~ label,
-.input-group textarea:focus ~ label,
-.input-group textarea:valid ~ label {
-  top: -25px;
-  left: 0;
-  font-size: 0.8rem;
-  color: var(--accent-color);
-  font-family: 'Fira Code', monospace;
-}
-
-.submit-btn {
-  margin-top: 20px;
-  background: transparent;
-  border: 1px solid var(--accent-color);
-  color: var(--accent-color) !important;
-  padding: 1rem 2rem;
-  font-family: 'Fira Code', monospace;
-  cursor: pointer;
-  transition: var(--transition);
-  border-radius: 4px;
-}
-
-.submit-btn:hover { background: rgba(100, 255, 218, 0.1);}
 
 /* --- 7. FOOTER --- */
 .footer {
@@ -331,7 +205,7 @@ body {
 }
 
 /* --- 8. RESPONSIVE --- */
-@media (max-width: 1080px) {
+@media (max-width: 1024px) {
   .main-content { padding: 0 50px; }
 }
 
@@ -402,9 +276,17 @@ body {
 
 .about-container {
   display: grid;
-  grid-template-columns: 3fr 2fr; /* Texto a la izquierda, imagen a la derecha */
+  grid-template-columns: 3fr 2fr;
   gap: 50px;
-  align-items: flex-start;
+  align-items: center;
+  /* Eliminamos justify-items: center para que el texto se alinee a la izquierda */
+  justify-items: start; 
+  margin: 0 auto;
+  max-width: 1000px; /* Limitamos el ancho para que el texto sea legible */
+}
+
+.about-text {
+  text-align: left; /* Aseguramos que el texto esté alineado a la izquierda */
 }
 
 .about-text p {

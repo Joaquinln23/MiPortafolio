@@ -1,0 +1,71 @@
+/* Formulario Estilizado */
+.contact-form {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Solo centramos el H3 */
+.contact-container h3 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Mantenemos el párrafo alineado a la izquierda */
+.contact-container p {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.input-group { position: relative; }
+
+.input-group input, 
+.input-group textarea {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid var(--text-secondary);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-family: inherit;
+  outline: none;
+}
+
+.input-group label {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  color: var(--text-secondary);
+  transition: 0.2s ease all;
+  pointer-events: none;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label,
+.input-group textarea:focus ~ label,
+.input-group textarea:valid ~ label {
+  top: -25px;
+  left: 0;
+  font-size: 0.8rem;
+  color: var(--accent-color);
+  font-family: 'Fira Code', monospace;
+}
+
+.submit-btn {
+  margin-top: 20px;
+  background: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color) !important;
+  padding: 1rem 2rem;
+  font-family: 'Fira Code', monospace;
+  cursor: pointer;
+  transition: var(--transition);
+  border-radius: 4px;
+}
+
+.submit-btn:hover { background: rgba(100, 255, 218, 0.1);}
