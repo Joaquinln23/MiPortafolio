@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaStar } from 'react-icons/fa';
 import '../style/Proyectos.css';
 
 const PRIVATE_PROJECTS = [
